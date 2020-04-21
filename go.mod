@@ -1,7 +1,7 @@
-module nope
+module goFrame
 
-go 1.14
+go 1.13
 
-require gee v0.0.0
+require gof v0.0.0
 
-replace gee => ./gee
+replace gof => ./bootstrap/gof
