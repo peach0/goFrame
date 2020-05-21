@@ -1,7 +1,5 @@
-module goFrame
+module gof
 
 go 1.13
 
-require gof v0.0.0
-
-replace gof => ./bootstrap/gof
+require github.com/gin-gonic/gin v1.6.3
