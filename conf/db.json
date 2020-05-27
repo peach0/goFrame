@@ -1,10 +1,18 @@
-{
-    "mysqlurl" :"127.0.0.1",
-    "mysqlport":"3306",
-    "mysqluname":"root",
-    "mysqlupwd":"123456",
-    "mysqldb":"test",
-    "redisurl":"127.0.0.1",
-    "redisport":"6379",
-    "redisupwd":"upwd"
-}
+[
+    {
+        "dbType" : "mysql",
+        "url" :"127.0.0.1",
+        "port":"3306",
+        "uname":"root",
+        "passwd":"123456",
+        "dbName":"test"
+    },
+    {
+        "dbType" : "mysql",
+        "url" :"127.0.0.1",
+        "port":"3306",
+        "uname":"root",
+        "passwd":"123456",
+        "dbName":"test"
+    }
+]

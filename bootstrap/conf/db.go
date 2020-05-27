@@ -7,20 +7,18 @@ import (
 )
 
 type DatabaseConf struct {
-	Mysqlurl   string `json:"mysqlurl"`
-	Mysqlport  string `json:"mysqlport"`
-	Mysqluname string `json:"mysqluname"`
-	Mysqlupwd  string `json:"mysqlupwd"`
-	Mysqldb    string `json:"mysqldb"`
-	Redisurl   string `json:"redisurl"`
-	Redisport  string `json:"redisport"`
-	Redisupwd  string `json:"redisupwd"`
+	DbType string `json:"dbType"`
+	Url    string `json:"url"`
+	Port   string `json:"port"`
+	Uname  string `json:"uname"`
+	Passwd string `json:"passwd"`
+	DbName string `json:"dbName"`
 }
 
 //读取配置文件，并解析json , 有错误抛异常，中止，不允许带病上岗
-func LoadDatabaseConf() *DatabaseConf {
+func LoadDatabaseConf() []DatabaseConf {
 
-	dcobj := DatabaseConf{}
+	dcobj := []DatabaseConf{}
 	file, err := os.Open("../conf/db.json")
 	if err != nil {
 		panic(err)
@@ -33,5 +31,5 @@ func LoadDatabaseConf() *DatabaseConf {
 	if err != nil {
 		panic(err)
 	}
-	return &dcobj
+	return dcobj
 }

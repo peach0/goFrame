@@ -1,11 +1,11 @@
 package goTest
 
 import (
-"gof/library/util/db"
-"testing"
+	"gof/bootstrap/conf"
+	"testing"
 )
 
 func TestHelloWorld(t *testing.T) {
-	a := db.LoadDatabaseConf()
+	a := conf.LoadDatabaseConf()
 	t.Logf("%v", a)
 }

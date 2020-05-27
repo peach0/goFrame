@@ -1,18 +1,41 @@
 package db
 
 import (
-	"sync"
+	"gof/bootstrap/conf"
 
 	"github.com/jinzhu/gorm"
 )
 
 var DB *gorm.DB
-var lock *sync.Mutex = &sync.Mutex{}
 
 const (
-	MYSQL = iota
-	SQLSERVER
+	DRIVER_MY_SQL  = "mysql"
+	DRIVER_SQLITE3 = "sqlite3"
 )
 
-//使用多例模式来生成数据路链接
-//什么时候关闭
+func ConnectDb() {
+	confList := conf.LoadDatabaseConf()
+	for conf := range confList {
+		switch conf.DbType {
+		case DRIVER_MY_SQL:
+			db = connectDbMysql(
+				conf.Url,
+				conf.Port,
+				conf.Uname,
+				conf.Passwd,
+				conf.DbName)
+		default:
+			db = connectDbMysql(
+				conf.Url,
+				conf.Port,
+				conf.Uname,
+				conf.Passwd,
+				conf.DbName)
+		}
+
+	}
+}
+
+func connectDbMysql(url, port, uname, passwd, dbName string) *gorm.DB {
+
+}
