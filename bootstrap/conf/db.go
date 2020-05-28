@@ -7,12 +7,13 @@ import (
 )
 
 type DatabaseConf struct {
-	DbType string `json:"dbType"`
-	Url    string `json:"url"`
-	Port   string `json:"port"`
-	Uname  string `json:"uname"`
-	Passwd string `json:"passwd"`
-	DbName string `json:"dbName"`
+	DbType  string `json:"dbType"`
+	Url     string `json:"url"`
+	Port    string `json:"port"`
+	Uname   string `json:"uname"`
+	Passwd  string `json:"passwd"`
+	DbName  string `json:"dbName"`
+	CharSet string `json:"charSet"`
 }
 
 //读取配置文件，并解析json , 有错误抛异常，中止，不允许带病上岗

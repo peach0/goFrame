@@ -12,3 +12,7 @@ func Staff(E *gin.Engine) {
 		g.GET("/getstafflist", staff.GetStaffList)
 	}
 }
+
+func handler(mapFunc map[string]string) {
+
+}
