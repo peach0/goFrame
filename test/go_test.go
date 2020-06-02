@@ -1,15 +1,22 @@
 package goTest
 
 import (
-	"gof/bootstrap/conf"
+	"github.com/jinzhu/gorm"
+	"gof/bootstrap/db"
+	"log"
 	"testing"
 )
 
 func TestHelloWorld(t *testing.T) {
-	confList := conf.LoadDatabaseConf()
-	t.Logf("%v", confList)
-	for _ ,conf := range confList {
-		t.Logf("%v", conf)
+	db.ConnectDb()
+	DB := db.GetDB("gof")
+	log.Print()
+	DB.Create(&Product{Code: "L1212", Price: 1000})
+}
 
-	}
+
+type Product struct {
+	gorm.Model
+	Code string
+	Price uint
 }

@@ -6,9 +6,10 @@ import (
 	"log"
 
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql" // indirect
 )
 
-var DBMap map[string]*gorm.DB
+var DBMap = make(map[string]*gorm.DB)
 
 const (
 	DRIVER_MY_SQL  = "mysql"

@@ -1,18 +1,11 @@
 [
     {
         "dbType" : "mysql",
-        "url" :"127.0.0.1",
-        "port":"3306",
+        "url" :"192.168.236.250",
+        "port":"8002",
         "uname":"root",
-        "passwd":"123456",
-        "dbName":"test"
-    },
-    {
-        "dbType" : "mysql",
-        "url" :"127.0.0.1",
-        "port":"3306",
-        "uname":"root",
-        "passwd":"123456",
-        "dbName":"test"
+        "passwd":"abc123456",
+        "dbName":"gof",
+        "charSet": "utf8"
     }
 ]
